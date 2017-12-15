@@ -5,26 +5,40 @@ const state = {
     'project1',
     'project2'
   ],
-  periods: [
-    {
-      startTime: '2017-01-01 00:00:00',
-      endTime: null,
-      project: null
-    }
-  ]
+  periods: []
 }
 
-const getters = {}
+const getters = {
+  activePeriods: state => state.periods.filter(p => p.endTime === null)
+}
 
 const mutations = {
   [types.PROJECT_ADD] (state, projectName) {
     state.projects.push(projectName)
+  },
+  [types.PROJECT_PERIOD_START] (state, projectName) {
+    state.periods.push({ startTime: new Date(), endTime: null, project: projectName })
+  },
+  [types.PROJECT_PERIOD_STOP] (state, projectName) {
+    state.periods
+      .filter(p => p.project === projectName)
+      .filter(p => p.endTime === null)
+      .map(p => {
+        p.endTime = new Date()
+        return p
+      })
   }
 }
 
 const actions = {
   addProject ({ commit }, projectName) {
     commit(types.PROJECT_ADD, projectName)
+  },
+  startPeriod ({ commit }, projectName) {
+    commit(types.PROJECT_PERIOD_START, projectName)
+  },
+  stopPeriod ({ commit }, projectName) {
+    commit(types.PROJECT_PERIOD_STOP, projectName)
   }
 }
 

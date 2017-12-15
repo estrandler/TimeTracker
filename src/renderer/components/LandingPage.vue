@@ -4,15 +4,20 @@
     main
       menu
       project-list
+      debug
 </template>
 
 <script>
   import ProjectList from './ProjectList/List'
-  import Menu from './Menu/Menu'
+  import Debug from '@/components/Debug'
 
   export default {
     name: 'landing-page',
-    components: { ProjectList, Menu },
+    components: {
+      ProjectList,
+      Debug,
+      Menu
+    },
     methods: {
       open (link) {
         this.$electron.shell.openExternal(link)

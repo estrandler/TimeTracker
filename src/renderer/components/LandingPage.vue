@@ -10,6 +10,7 @@
 <script>
   import ProjectList from './ProjectList/List'
   import Debug from '@/components/Debug'
+  import Menu from './Menu/Menu'
 
   export default {
     name: 'landing-page',

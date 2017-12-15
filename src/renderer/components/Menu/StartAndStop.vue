@@ -6,12 +6,12 @@
 
 <script>
     export default {
-        data() {
-            return {
-                start: "start",
-                stop: "stop"
-            }
-        }    
+      data () {
+        return {
+          start: 'start',
+          stop: 'stop'
+        }
+      }
     }
 </script>
 

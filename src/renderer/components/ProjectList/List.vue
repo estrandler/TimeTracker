@@ -15,25 +15,23 @@
     data () {
       return {
         search: '',
-        projects: [{
-          'text': 'first item'
-        },
-        {
-          'text': 'second item'
-        },
-        {
-          'text': 'third item'
-        },
-        {
-          'text': 'fourth item'
-        }]
+        projects: this.getProjects()
       }
     },
     computed: {
       filteredProjects () {
         return this.projects.filter(project => {
-          return project.text.toLowerCase().includes(this.search.toLowerCase())
+          if (project.length > 0) {
+            return project.text.toLowerCase().includes(this.search.toLowerCase())
+          } else {
+            return []
+          }
         })
+      }
+    },
+    methods: {
+      getProjects () {
+        return this.$store.state.master.projects
       }
     }
   }

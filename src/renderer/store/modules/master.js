@@ -1,10 +1,7 @@
 import * as types from '../mutation-types'
 
 const state = {
-  projects: [
-    'project1',
-    'project2'
-  ],
+  projects: [],
   periods: []
 }
 

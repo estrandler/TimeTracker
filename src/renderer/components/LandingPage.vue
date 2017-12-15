@@ -9,6 +9,7 @@
 
 <script>
   import ProjectList from './ProjectList/List'
+  import Menu from '@/components/Menu/Menu'
   import Debug from '@/components/Debug'
   import MenuContent from '@/components/Menu/MenuContent'
 
@@ -59,7 +60,7 @@
   main {
     display: flex;
     justify-content: space-between;
-    
+
     > div { flex-basis: 50%; }
   }
 

@@ -12,8 +12,6 @@
     a(@click="stop", href="#") end period
     ul
       li(v-for="period in periods") {{ period.project }} - {{ period.startTime }} - {{ period.endTime }}
-    ul
-      li(v-for="project in projects") {{ project }}
 </template>
 
 <script>

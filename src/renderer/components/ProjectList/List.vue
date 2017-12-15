@@ -1,9 +1,6 @@
-<template>
-  <div>
-    <div class="">
-      {{ msg }}
-    </div>
-  </div>
+<template lang="pug">
+  div
+    {{ msg }}
 </template>
 
 <script>

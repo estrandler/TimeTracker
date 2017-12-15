@@ -1,12 +1,12 @@
 <template lang="pug">
     .project-container
-        a.project-button.button
-            h1 Hej hej hej hej hej hej hej
-        a.project-button.button
+        a.project-button.button.is-info.is-outlined
+            h1 1
+        a.project-button.button.is-info.is-outlined
             h1 2
-        a.project-button.button
+        a.project-button.button.is-info.is-outlined
             h1 3
-        a.project-button.button
+        a.project-button.button.is-info.is-outlined
             h1 4
 </template>
 
@@ -33,7 +33,7 @@ export default {
             padding: 20px;
             
             h1 {
-                color: #cccccc;
+                text-transform: uppercase;
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;

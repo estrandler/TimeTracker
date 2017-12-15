@@ -4,15 +4,17 @@
     main
       .left-side
         span.title TimeTracker APP
+      menu
       project-list
 </template>
 
 <script>
   import ProjectList from './ProjectList/List'
+  import Menu from './Menu/Menu'
 
   export default {
     name: 'landing-page',
-    components: { ProjectList },
+    components: { ProjectList, Menu },
     methods: {
       open (link) {
         this.$electron.shell.openExternal(link)

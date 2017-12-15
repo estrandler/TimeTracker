@@ -26,7 +26,8 @@ export default TimerService =  {
 
         if (!timer)
             return;
-
-        TimerRepository.stop(timer);
+            
+        timer.StopTime = new Date();
+        TimerRepository.save(timer);
     }
 };

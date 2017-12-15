@@ -1,12 +1,12 @@
 <template lang="pug">
     .project-container
-        .project-button
-            h1 1
-        .project-button
+        a.project-button.button
+            h1 Hej hej hej hej hej hej hej
+        a.project-button.button
             h1 2
-        .project-button
+        a.project-button.button
             h1 3
-        .project-button
+        a.project-button.button
             h1 4
 </template>
 
@@ -19,14 +19,25 @@ export default {
 <style lang="scss">
     .project-container {
         width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        
 
         .project-button {
-            padding: 10px;
-            display: table-cell;
-            height: auto;
-            vertical-align: middle;
+            display: flex;
+            border-radius: 10px;
+            height: 200px;
+            width: 200px;
+            text-align: center;
+            margin: auto;
+            padding: 20px;
             
             h1 {
+                color: #cccccc;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                margin: auto;
                 font-size: 36px;
             }
         }

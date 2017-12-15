@@ -1,7 +1,7 @@
 <template lang="pug">
   #wrapper
-    menu-content
     img#logo(src="~@/assets/TimeTracker.png")
+    menu-content
     main
       project-list
       debug
@@ -59,7 +59,7 @@
   main {
     display: flex;
     justify-content: space-between;
-    
+
     > div { flex-basis: 50%; }
   }
 

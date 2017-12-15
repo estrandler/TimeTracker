@@ -7,26 +7,14 @@
         .control
           a.button.is-info Search
       .columns
-        .column(v-for="item in filteredProjects" transition="item") {{ item.text }}
+        .column(v-for="item in projects" transition="item") {{ item }}
 </template>
 
 <script>
   export default {
     data () {
       return {
-        search: '',
-        projects: [{
-          'text': 'first item'
-        },
-        {
-          'text': 'second item'
-        },
-        {
-          'text': 'third item'
-        },
-        {
-          'text': 'fourth item'
-        }]
+        search: ''
       }
     },
     computed: {
@@ -34,6 +22,9 @@
         return this.projects.filter(project => {
           return project.text.toLowerCase().includes(this.search.toLowerCase())
         })
+      },
+      projects () {
+        return this.$store.state.master.projects
       }
     }
   }

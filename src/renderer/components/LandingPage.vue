@@ -59,7 +59,7 @@
   main {
     display: flex;
     justify-content: space-between;
-    
+
     > div { flex-basis: 50%; }
   }
 

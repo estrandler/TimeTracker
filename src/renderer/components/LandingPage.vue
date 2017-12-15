@@ -2,8 +2,6 @@
   #wrapper
     img#logo(src="~@/assets/TimeTracker.png")
     main
-      .left-side
-        span.title TimeTracker APP
       menu
       project-list
 </template>

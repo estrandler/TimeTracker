@@ -1,13 +1,39 @@
 <template lang="pug">
-  div
-    {{ msg }}
+  section
+    .container
+      .field.has-addons
+        .control
+          input.input(type="text" v-model="search" placeholder="Text input")
+        .control
+          a.button.is-info Search
+      .columns
+        .column(v-for="item in filteredProjects" transition="item") {{ item.text }}
 </template>
 
 <script>
   export default {
     data () {
       return {
-        msg: 'ProjectList'
+        search: '',
+        projects: [{
+          'text': 'first item'
+        },
+        {
+          'text': 'second item'
+        },
+        {
+          'text': 'third item'
+        },
+        {
+          'text': 'fourth item'
+        }]
+      }
+    },
+    computed: {
+      filteredProjects () {
+        return this.projects.filter(project => {
+          return project.text.toLowerCase().includes(this.search.toLowerCase())
+        })
       }
     }
   }

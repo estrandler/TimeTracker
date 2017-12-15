@@ -2,7 +2,7 @@
   #wrapper
     img#logo(src="~@/assets/TimeTracker.png")
     main
-      menu
+      MenuContent
       project-list
       debug
 </template>
@@ -10,14 +10,14 @@
 <script>
   import ProjectList from './ProjectList/List'
   import Debug from '@/components/Debug'
-  import Menu from './Menu/Menu'
+  import MenuContent from '@/components/Menu/MenuContent'
 
   export default {
     name: 'landing-page',
     components: {
       ProjectList,
       Debug,
-      Menu
+      MenuContent
     },
     methods: {
       open (link) {

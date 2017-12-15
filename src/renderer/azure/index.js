@@ -50,6 +50,23 @@ export default {
       })
     })
   },
+  getAllPeriods (username) {
+    return new Promise((resolve, reject) => {
+      tableService.queryEntities('period', new azure.TableQuery().where('PartitionKey eq ?', username), null, (error, result, response) => {
+        if (!error) {
+          resolve(result.entries.map(r => {
+            return {
+              endTime: r.EndTime._,
+              startTime: r.StartTime._,
+              project: r.RowKey._
+            }
+          }))
+        }
+
+        reject(new Error('fetch failed'))
+      })
+    })
+  },
   test () {
     tableService.createTableIfNotExists('period', (error, result, response) => {
       if (!error) {}

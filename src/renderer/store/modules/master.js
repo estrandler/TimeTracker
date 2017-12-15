@@ -53,8 +53,12 @@ const actions = {
   startPeriod ({ commit }, projectName) {
     commit(types.PROJECT_PERIOD_START, projectName)
   },
-  stopPeriod ({ commit }, projectName) {
+  stopPeriod ({ commit, state }, projectName) {
     commit(types.PROJECT_PERIOD_STOP, projectName)
+    let period = state.periods.find(p => p.project === projectName)
+    if (period) {
+      azure.addPeriod(period)
+    }
   }
 }
 

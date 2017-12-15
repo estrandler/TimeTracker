@@ -5,7 +5,7 @@ let tableService = azure.createTableService(process.env.AZURE_STORAGE_ACCOUNT, p
 
 export default {
   addProject (projectName) {
-    var entity = {
+    const entity = {
       PartitionKey: entGen.String('temp'),
       RowKey: entGen.String(projectName),
       ProjectName: entGen.String(projectName)
@@ -32,8 +32,26 @@ export default {
       })
     })
   },
+  addPeriod (period) {
+    const entity = {
+      PartitionKey: entGen.String('temp'),
+      RowKey: entGen.String(period.project),
+      StartTime: entGen.DateTime(period.startTime),
+      EndTime: entGen.DateTime(period.endTime)
+    }
+
+    return new Promise((resolve, reject) => {
+      tableService.insertEntity('period', entity, (error, result, response) => {
+        if (!error) {
+          resolve(response)
+        }
+
+        reject(new Error('insert failed'))
+      })
+    })
+  },
   test () {
-    tableService.createTableIfNotExists('project', (error, result, response) => {
+    tableService.createTableIfNotExists('period', (error, result, response) => {
       if (!error) {}
     })
   }

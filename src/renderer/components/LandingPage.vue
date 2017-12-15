@@ -5,14 +5,19 @@
       .left-side
         span.title TimeTracker APP
       project-list
+      debug
 </template>
 
 <script>
   import ProjectList from './ProjectList/List'
+  import Debug from '@/components/Debug'
 
   export default {
     name: 'landing-page',
-    components: { ProjectList },
+    components: {
+      ProjectList,
+      Debug
+    },
     methods: {
       open (link) {
         this.$electron.shell.openExternal(link)

@@ -1,4 +1,5 @@
 import * as types from '../mutation-types'
+import azure from '@/azure'
 
 const state = {
   projects: [],
@@ -12,6 +13,9 @@ const getters = {
 const mutations = {
   [types.PROJECT_ADD] (state, projectName) {
     state.projects.push(projectName)
+  },
+  [types.PROJECT_SET_ALL] (state, projects) {
+    state.projects = projects
   },
   [types.PROJECT_PERIOD_START] (state, projectName) {
     state.periods.push({ startTime: new Date(), endTime: null, project: projectName })
@@ -29,7 +33,22 @@ const mutations = {
 
 const actions = {
   addProject ({ commit }, projectName) {
-    commit(types.PROJECT_ADD, projectName)
+    azure.addProject(projectName)
+      .then(azureProjectName => {
+        commit(types.PROJECT_ADD, azureProjectName)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  },
+  getAllProjects ({ commit }, username) {
+    azure.getAllProjects(username)
+      .then((projects) => {
+        commit(types.PROJECT_SET_ALL, projects)
+      })
+      .catch(error => {
+        console.log(error)
+      })
   },
   startPeriod ({ commit }, projectName) {
     commit(types.PROJECT_PERIOD_START, projectName)

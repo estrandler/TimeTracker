@@ -1,28 +1,18 @@
 <template lang="pug">
   #wrapper
-    img#logo(src="~@/assets/logo.png", alt="electron-vue")
+    img#logo(src="~@/assets/TimeTracker.png")
     main
       .left-side
-        span.title
-          | Welcome to your new project
-        system-information
-      .right-side
-        .doc
-          .title Getting Started
-          p electron-vue woop woop
-          button(@click="open('https://simulatedgreg.gitbooks.io/electron-vue/content/')") Read the docs
-        .doc
-          .title.alt Other documentation
-          button.alt(@click="open('https://electron.atom.io/docs/')") Electron
-          button.alt(@click="open('https://vuejs.org')") Vue.js
+        span.title TimeTracker APP
+      project-list
 </template>
 
 <script>
-  import SystemInformation from './LandingPage/SystemInformation'
+  import ProjectList from './ProjectList/List'
 
   export default {
     name: 'landing-page',
-    components: { SystemInformation },
+    components: { ProjectList },
     methods: {
       open (link) {
         this.$electron.shell.openExternal(link)

@@ -4,9 +4,9 @@ let entGen = azure.TableUtilities.entityGenerator
 let tableService = azure.createTableService(process.env.AZURE_STORAGE_ACCOUNT, process.env.AZURE_STORAGE_ACCESS_KEY)
 
 export default {
-  addProject (projectName) {
+  addProject (projectName, username) {
     const entity = {
-      PartitionKey: entGen.String('temp'),
+      PartitionKey: entGen.String(username),
       RowKey: entGen.String(projectName),
       ProjectName: entGen.String(projectName)
     }
@@ -32,9 +32,9 @@ export default {
       })
     })
   },
-  addPeriod (period) {
+  addPeriod (period, username) {
     const entity = {
-      PartitionKey: entGen.String('temp'),
+      PartitionKey: entGen.String(username),
       RowKey: entGen.String(period.project),
       StartTime: entGen.DateTime(period.startTime),
       EndTime: entGen.DateTime(period.endTime)

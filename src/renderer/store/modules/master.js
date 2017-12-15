@@ -40,8 +40,8 @@ const mutations = {
 }
 
 const actions = {
-  addProject ({ commit }, projectName) {
-    azure.addProject(projectName)
+  addProject ({ commit, state }, projectName) {
+    azure.addProject(projectName, state.username)
       .then(azureProjectName => {
         commit(types.PROJECT_ADD, azureProjectName)
       })
@@ -65,7 +65,7 @@ const actions = {
     commit(types.PROJECT_PERIOD_STOP, projectName)
     let period = state.periods.find(p => p.project === projectName)
     if (period) {
-      azure.addPeriod(period)
+      azure.addPeriod(period, state.username)
     }
   },
   getAllPeriods ({ commit, state }) {

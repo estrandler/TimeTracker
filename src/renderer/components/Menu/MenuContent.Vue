@@ -1,6 +1,7 @@
 <template lang="pug">
     .container
-        start-and-stop
+      project-container
+      start-and-stop
 </template>
     
 <script>
@@ -17,6 +18,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+  .container {
+    width: 80vw;
+  }
 
 </style>

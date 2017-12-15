@@ -1,8 +1,8 @@
 <template lang="pug">
   #wrapper
+    menu-content
     img#logo(src="~@/assets/TimeTracker.png")
     main
-      MenuContent
       project-list
       debug
 </template>

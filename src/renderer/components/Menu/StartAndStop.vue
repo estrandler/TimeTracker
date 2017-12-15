@@ -1,13 +1,18 @@
 <template lang="pug">
-    .start-stop-container
-        button.start-button
-        button.stop-button
+  .start-stop-container
+    button.start-button {{ start }}
+    button.stop-button {{ stop }}
 </template>
 
 <script>
-export default {
-
-}
+    export default {
+        data() {
+            return {
+                start: "start",
+                stop: "stop"
+            }
+        }    
+    }
 </script>
 
 <style lang="scss">

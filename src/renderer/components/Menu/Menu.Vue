@@ -1,6 +1,7 @@
 <template lang="pug">
     .container
         project-container
+        start-and-stop
 </template>
     
 <script>
@@ -10,8 +11,8 @@ import StartAndStop from '@/components/menu/StartAndStop'
 
 export default {
     components: {
-        ProjectContainer
-        AddAndRemove
+        ProjectContainer,
+        AddAndRemove,
         StartAndStop
     }
 }

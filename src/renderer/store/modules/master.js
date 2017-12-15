@@ -28,6 +28,9 @@ const mutations = {
         p.endTime = new Date()
         return p
       })
+  },
+  [types.PROJECT_PERIOD_SET_ALL] (state, periods) {
+    state.periods = periods
   }
 }
 
@@ -59,6 +62,16 @@ const actions = {
     if (period) {
       azure.addPeriod(period)
     }
+  },
+  getAllPeriods ({ commit }, username) {
+    azure.getAllPeriods(username)
+      .then(periods => {
+        console.log(periods)
+        commit(types.PROJECT_PERIOD_SET_ALL, periods)
+      })
+      .catch(error => {
+        console.log(error)
+      })
   }
 }
 

@@ -1,0 +1,26 @@
+{
+  "name": "timetracker",
+  "version": "1.0.0",
+  "description": "TimeTracker NodeJSapp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/estrandler/TimeTracker.git"
+  },
+  "keywords": [
+    "timetracker"
+  ],
+  "author": "Marcus Engelhart <marcusengelhart@gmail.com> (https://github.com/engelharten)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/estrandler/TimeTracker/issues"
+  },
+  "homepage": "https://github.com/estrandler/TimeTracker#readme",
+  "dependencies": {
+    "appjs": "0.0.20",
+    "appjs-win32": "0.0.19"
+  }
+}

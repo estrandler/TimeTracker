@@ -52,6 +52,7 @@
     height: 100vh;
     padding: 60px 80px;
     width: 100vw;
+    text-align: center;
   }
 
   #logo {

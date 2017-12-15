@@ -18,9 +18,12 @@ export default {
 
 <style lang="scss">
     .project-container {
-        width: 100%;
         display: flex;
         flex-wrap: wrap;
+        margin: 0;
+        list-style: none;
+        align-items: center;
+        justify-content: center;
         
 
         .project-button {
@@ -29,7 +32,7 @@ export default {
             height: 200px;
             width: 200px;
             text-align: center;
-            margin: auto;
+            margin: 10px;
             padding: 20px;
             
             h1 {

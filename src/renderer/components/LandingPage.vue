@@ -2,8 +2,7 @@
   #wrapper
     img#logo(src="~@/assets/TimeTracker.png")
     main
-      .left-side
-        span.title TimeTracker APP
+      menu
       project-list
       debug
 </template>
@@ -16,7 +15,8 @@
     name: 'landing-page',
     components: {
       ProjectList,
-      Debug
+      Debug,
+      Menu
     },
     methods: {
       open (link) {

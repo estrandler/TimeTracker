@@ -1,7 +1,8 @@
 <template lang="pug">
-  .start-stop-container
-    button.start-button {{ start }}
-    button.stop-button {{ stop }}
+  .columns 
+    .start-stop-container
+      button.start-button {{ start }}
+      button.stop-button {{ stop }}
 </template>
 
 <script>

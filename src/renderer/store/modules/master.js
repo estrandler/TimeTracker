@@ -52,13 +52,6 @@ const actions = {
   },
   startPeriod ({ commit }, projectName) {
     commit(types.PROJECT_PERIOD_START, projectName)
-    azure.getAllProjects()
-      .then(projects => {
-        console.log('projects', projects)
-      })
-      .catch(error => {
-        console.log(error)
-      })
   },
   stopPeriod ({ commit }, projectName) {
     commit(types.PROJECT_PERIOD_STOP, projectName)

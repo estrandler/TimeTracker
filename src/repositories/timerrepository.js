@@ -35,11 +35,6 @@ export default TimerRepository = {
         } else {
             data.push(timer);
         }
-    },
-
-    stop: (timer) => {
-        timer.StopTime = new Date();
-        this.save(timer);
     }
 
 };

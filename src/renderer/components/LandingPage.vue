@@ -19,6 +19,10 @@
       Debug,
       MenuContent
     },
+    created () {
+      this.$store.dispatch('getAllProjects')
+      this.$store.dispatch('getAllPeriods')
+    },
     methods: {
       open (link) {
         this.$electron.shell.openExternal(link)

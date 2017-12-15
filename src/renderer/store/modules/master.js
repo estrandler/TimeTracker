@@ -3,11 +3,13 @@ import azure from '@/azure'
 
 const state = {
   projects: [],
-  periods: []
+  periods: [],
+  username: null
 }
 
 const getters = {
-  activePeriods: state => state.periods.filter(p => p.endTime === null)
+  activePeriods: state => state.periods.filter(p => p.endTime === null),
+  isAuthorized: state => state.username !== null && state.username.length > 0
 }
 
 const mutations = {
@@ -31,6 +33,9 @@ const mutations = {
   },
   [types.PROJECT_PERIOD_SET_ALL] (state, periods) {
     state.periods = periods
+  },
+  [types.USER_LOGIN] (state, username) {
+    state.username = username
   }
 }
 
@@ -44,8 +49,8 @@ const actions = {
         console.log(error)
       })
   },
-  getAllProjects ({ commit }, username) {
-    azure.getAllProjects(username)
+  getAllProjects ({ commit, state }) {
+    azure.getAllProjects(state.username)
       .then((projects) => {
         commit(types.PROJECT_SET_ALL, projects)
       })
@@ -63,15 +68,20 @@ const actions = {
       azure.addPeriod(period)
     }
   },
-  getAllPeriods ({ commit }, username) {
-    azure.getAllPeriods(username)
+  getAllPeriods ({ commit, state }) {
+    azure.getAllPeriods(state.username)
       .then(periods => {
-        console.log(periods)
         commit(types.PROJECT_PERIOD_SET_ALL, periods)
       })
       .catch(error => {
         console.log(error)
       })
+  },
+  login ({ commit }, username) {
+    return new Promise((resolve, reject) => {
+      commit(types.USER_LOGIN, username)
+      resolve(username)
+    })
   }
 }
 

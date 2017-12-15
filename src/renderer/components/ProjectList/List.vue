@@ -16,7 +16,7 @@
   }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   .title {
     color: #888;
     font-size: 18px;
@@ -30,15 +30,15 @@
   .item {
     display: flex;
     margin-bottom: 6px;
-  }
 
-  .item .name {
-    color: #6a6a6a;
-    margin-right: 6px;
-  }
+    .name {
+      color: #6a6a6a;
+      margin-right: 6px;
+    }
 
-  .item .value {
-    color: #35495e;
-    font-weight: bold;
+    .value {
+      color: #35495e;
+      font-weight: bold;
+    }
   }
 </style>

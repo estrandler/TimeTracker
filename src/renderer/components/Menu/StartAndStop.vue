@@ -16,7 +16,7 @@
 </script>
 
 <style lang="scss">
-    .stop-button{
+  .stop-button{
 
-    }
+  }
 </style>

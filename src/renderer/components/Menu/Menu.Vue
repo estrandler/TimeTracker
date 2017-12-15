@@ -10,11 +10,11 @@ import AddAndRemove from '@/components/menu/AddAndRemove'
 import StartAndStop from '@/components/menu/StartAndStop'
 
 export default {
-    components: {
-        ProjectContainer,
-        AddAndRemove,
-        StartAndStop
-    }
+  components: {
+    ProjectContainer,
+    AddAndRemove,
+    StartAndStop
+  }
 }
 </script>
 

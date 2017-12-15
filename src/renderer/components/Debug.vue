@@ -16,6 +16,7 @@ export default {
     },
     stop () {
       this.$store.dispatch('stopPeriod', 'project1')
+      this.$store.dispatch('addProject', 'testprojekt')
     }
   },
   computed: {

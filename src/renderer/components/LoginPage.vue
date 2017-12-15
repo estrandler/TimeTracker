@@ -1,6 +1,8 @@
 <template lang="pug">
-  .login
+  .login.has-text-centered
+    h1.title Logga in då
     input.input(v-model="username", @keyup.enter="login")
+    a(@click="login", href) jajamen
 </template>
 
 <script>
